@@ -1,32 +1,12 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { getIdeas } from 'actions/ideasActions';
-import Idea from './Idea';
+import React from 'react';
+import Ideas from './Ideas';
+import AddIdea from './AddIdea';
 
-class Board extends Component {
-  render() {
-    const { loading, data, error } = this.props;
-    if (error) {
-      return <div>{error.message}</div>
-    }
-    if (!data || loading) {
-      return <div>Loading...</div>
-    }
+const Board = () => (
+  <div>
+    <AddIdea />
+    <Ideas/>
+  </div>
+);
 
-    return (
-      <div className="card-columns">
-        {data.map(idea => <Idea {...idea}/>)}
-      </div>
-    );
-  }
-
-  componentDidMount() {
-    this.props.getIdeas();
-  }
-}
-
-const mapStateToProps = ({ ideas }) => ({ ...ideas });
-
-export default connect(mapStateToProps, {
-  getIdeas
-})(Board);
+export default Board;

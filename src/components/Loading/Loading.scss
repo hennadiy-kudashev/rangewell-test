@@ -1,0 +1,25 @@
+.app-loading {
+  position: relative;
+
+  .loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    z-index: 100;
+  }
+
+  .loading-content {
+    &.hidden {
+      opacity: 0.5;
+    }
+  }
+
+  &.full-screen{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+  }
+}

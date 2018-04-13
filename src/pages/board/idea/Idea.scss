@@ -1,0 +1,14 @@
+.card {
+  &:hover {
+    button {
+      display: block;
+    }
+  }
+  .card-footer {
+    height: 4rem;
+  }
+
+  button {
+    display: none;
+  }
+}
