@@ -8,7 +8,7 @@ Each idea should have a unique id (read-only), a creation date (read-only), a ti
 Assume that there is a backend REST service with the following endpoints:
 ```
 GET ideas/ -> [{“id”: “:id”, “created_date”: “:created_date”, “title”: “:title”, “body”: “:body”}, {}, …]
-GET ideas/new -> { “id”: “:id”, “created_date”: “:created_date” } 
+POST ideas/new -> { “id”: “:id”, “created_date”: “:created_date” } 
 POST idea/update { “id”: “:id”, “title”: “:title”, “body”: “:body” }
 POST idea/delete { “id”: “:id” }
 ```
