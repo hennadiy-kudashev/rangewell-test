@@ -8,17 +8,17 @@ Each idea should have a unique id (read-only), a creation date (read-only), a ti
 Assume that there is a backend REST service with the following endpoints:
 ```
 GET ideas/ -> [{“id”: “:id”, “created_date”: “:created_date”, “title”: “:title”, “body”: “:body”}, {}, …]
-POST ideas/new -> { “id”: “:id”, “created_date”: “:created_date” } 
+GET ideas/new -> { “id”: “:id”, “created_date”: “:created_date” } 
 POST idea/update { “id”: “:id”, “title”: “:title”, “body”: “:body” }
 POST idea/delete { “id”: “:id” }
 ```
 Assume that the back-end makes use of standard HTTP success and error codes. 
 
 ### Required
-1.	Ideas should be displayed as tiles (as per the “card-design.png” file), aligned horizontally to fit screen width. You can hard code a few ideas to get you started. 
+1.	Ideas should be displayed as tiles (as per the [card-design.png](https://github.com/Rangewell/rangewell-test/blob/master/card-design.png) file), aligned horizontally to fit screen width. You can hard code a few ideas to get you started. 
 2.	There should be a button that can be clicked to add a new blank idea, and the title field should be focused to prompt the user to begin typing. A request should be made to a backend REST service to get an id for the new idea, as well as the created_date. 
 3.	The title and body fields should be editable. Blurring any of these fields should trigger an update request to the backend REST service. 
-4.	Each tile should have a delete icon which should only be visible when hovering over the tile (the “trash-icon.svg” file). Clicking it should remove the idea and make an update request to the backend REST service.
+4.	Each tile should have a delete icon which should only be visible when hovering over the tile (the [trash-icon.svg](https://github.com/Rangewell/rangewell-test/blob/master/trash-icon.svg) file). Clicking it should remove the idea and make an update request to the backend REST service.
 5.	Please fork the provided github repository, make a new branch, make a commit to that branch before finally pushing your finished work back to github
 
 ### Stretch 
