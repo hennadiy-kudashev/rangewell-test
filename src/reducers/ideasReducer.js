@@ -1,17 +1,14 @@
 import * as types from '../actions/types';
-import initialState from '../store/initialState';
+import { createReducer, successType } from 'lib/callAPI';
 
-export default (state = initialState.ideas, action) => {
+const dataReducer = (state = null, action) => {
   switch (action.type) {
-    case types.GET_IDEAS:
-      return {
-        ...state,
-        data: {
-          ...state.data,
-          ...action.data
-        }
-      };
+    case successType(types.GET_IDEAS):
+      return action.response;
     default:
       return state;
   }
 };
+
+
+export default createReducer(types.GET_IDEAS, dataReducer);
